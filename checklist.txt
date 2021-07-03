@@ -28,8 +28,14 @@ TODO: To-Do list web application
     [x] npm init to install package.json
     [x] npm install express
     [x] npm install page
-    [ ] add start to package.json 
-    [ ] setup router to handle CRUD requests
+    [x] setup server.js
+    [x] add start to package.json  
+    [ ] setup pool.js 
+    [ ] setup tasks.router.js 
+        [ ] GET requests
+        [ ] POST requests 
+        [ ] PUT requests 
+        [ ] DELETE requests 
     [ ] Setup database connection configuration
 
     Database
