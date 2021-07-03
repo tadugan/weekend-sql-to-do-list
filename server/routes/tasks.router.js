@@ -48,18 +48,35 @@ tasksRouter.put('/:id', (req, res) => {
     `;
 
     pool.query(queryText, [taskId])
-    .then(response => {
-        console.log('updated this many rows:', response.rowCount); // should be 1
-        res.sendStatus(202);
-    })
-    .catch(error => {
-        console.log('Error in updating status of task. Error:', error);
-        res.sendStatus(500);
-    });
+        .then(response => {
+            console.log('updated this many rows:', response.rowCount); // should be 1
+            res.sendStatus(202);
+        })
+        .catch(error => {
+            console.log('Error in updating status of task. Error:', error);
+            res.sendStatus(500);
+        });
 });
 
 // DELETE
+// DELETE request to remove a task from database
+tasksRouter.delete('/:id', (req, res) => {
+    const taskId = req.params.id;
+    const queryText = `
+    DELETE FROM to_do_list
+    WHERE id = $1;
+    `;
 
+    pool.query(queryText, [taskId])
+        .then(response => {
+            console.log('deleted this many rows:', response.rowCount); // should be 1
+            res.sendStatus(204);
+        })
+        .catch(error => {
+            console.log('Error in deleting task. Error:', error);
+            res.sendStatus(500);
+        });
+})
 
 // Export router
 module.exports = tasksRouter;

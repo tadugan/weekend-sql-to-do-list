@@ -35,7 +35,7 @@ TODO: To-Do list web application
     [x] setup tasks.router.js 
         [x] GET requests
         [x] POST requests 
-        [ ] PUT requests 
+        [x] PUT requests 
         [ ] DELETE requests 
 
     Database
