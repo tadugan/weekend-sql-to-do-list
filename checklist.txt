@@ -2,7 +2,7 @@ TODO: To-Do list web application
 
     Setup
     [x] Create file structure for project
-    [ ] Source CSS, Javascript, and Jquery into index.html
+    [x] Source CSS, Javascript, and Jquery into index.html
 
     Client Side
     [ ] Create input fields for adding a task
@@ -33,10 +33,13 @@ TODO: To-Do list web application
     [ ] Setup database connection configuration
 
     Database
-    [ ] create database in Postico called weekend-to-do-app
-    [ ] create table to store tasks
-    [ ] populate table with test task data
+    [x] create database in Postico called weekend-to-do-app
+    [x] create table to store tasks
+    [x] populate table with test task data
     [ ] Learn how to use booleans in SQL queries
+
+        Database model
+            ID | task name | task description | completed?
 
     Other Project Requirements
     [ ] create a database.sql file in the repo including all the queries to create the table and populate it with data  
