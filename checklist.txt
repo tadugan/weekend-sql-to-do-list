@@ -5,15 +5,16 @@ TODO: To-Do list web application
     [x] Source CSS, Javascript, and Jquery into index.html
 
     Client Side
-    [ ] Create input fields for adding a task
+    [x] Create input fields for adding a task
         [ ] Add input field validation
-        [ ] Set max character length RESEARCH THIS
-    [ ] Create submit button for adding a task
-    [ ] Display all tasks on the DOM
+        [ ] Set max character length (RESEARCH THIS)
+    [x] Create submit button for adding a task
+    [x] Create a Table to display tasks 
     [ ] Refresh DOM when a new task is added
     [ ] Each task had "Complete" & "Delete" buttons
     [ ] Ajax POST request to add new task when submit button is pressed
     [ ] Ajax GET request to display all tasks on the DOM 
+        [ ] Display tasks on page load
     [ ] Ajax PUT request to update "Complete" status of each task 
     [ ] Ajax DELETE request to delete a task from the SQL database 
         [ ] Remove task from DOM 
@@ -36,7 +37,7 @@ TODO: To-Do list web application
         [x] GET requests
         [x] POST requests 
         [x] PUT requests 
-        [ ] DELETE requests 
+        [x] DELETE requests 
 
     Database
     [x] create database in Postico called weekend-to-do-app

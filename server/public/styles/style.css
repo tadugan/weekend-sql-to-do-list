@@ -1,7 +1,19 @@
 body {
     margin: 0px;
     background-color: blanchedalmond;
+    text-align: center;
 }
 
-h1 {
+table, th, td {
+    border: 1px solid black;
+}
+
+table {
+    margin: auto;
+    border-collapse: collapse;
+}
+
+th, td {
+    min-width: 100px;
+    background-color: white;
 }
