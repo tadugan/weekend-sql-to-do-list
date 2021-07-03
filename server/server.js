@@ -1,5 +1,5 @@
 const express = require('express');
-// const tasksRouter = require('./routes/tasks.router.js');
+const tasksRouter = require('./routes/tasks.router.js');
 const app = express();
 
 app.use(express.urlencoded({extended:true}));
@@ -9,7 +9,7 @@ app.use(express.json());
 app.use(express.static('server/public'));
 
 // Routes go here
-// app.use('/tasks', tasksRouter);
+app.use('/tasks', tasksRouter);
 
 // Start express
 const PORT = 5000;

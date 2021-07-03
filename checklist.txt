@@ -30,7 +30,7 @@ TODO: To-Do list web application
     [x] npm install page
     [x] setup server.js
     [x] add start to package.json  
-    [ ] setup pool.js 
+    [x] setup pool.js 
     [ ] setup tasks.router.js 
         [ ] GET requests
         [ ] POST requests 
