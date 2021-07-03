@@ -1,10 +1,8 @@
 TODO: To-Do list web application 
 
     Setup
-    [ ] Create file structure for project
+    [x] Create file structure for project
     [ ] Source CSS, Javascript, and Jquery into index.html
-    [ ] 
-    [ ] 
 
     Client Side
     [ ] Create input fields for adding a task
@@ -27,13 +25,12 @@ TODO: To-Do list web application
             [ ] font family and size
 
     Server Side 
-    [ ] npm init to install package.json
-    [ ] npm install express
-    [ ] npm install page
+    [x] npm init to install package.json
+    [x] npm install express
+    [x] npm install page
     [ ] add start to package.json 
     [ ] setup router to handle CRUD requests
     [ ] Setup database connection configuration
-    [ ] 
 
     Database
     [ ] create database in Postico called weekend-to-do-app
@@ -42,9 +39,7 @@ TODO: To-Do list web application
     [ ] Learn how to use booleans in SQL queries
 
     Other Project Requirements
-    [ ] create a database.sql file in the repo including all the queries to create the table and populate it with data 
-    [ ] 
-    [ ] 
+    [ ] create a database.sql file in the repo including all the queries to create the table and populate it with data  
 
     Stretch Goals
     NOTE: Use a GIT branch to work on each stretch goal 
