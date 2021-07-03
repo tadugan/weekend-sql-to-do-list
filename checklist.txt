@@ -1,0 +1,61 @@
+TODO: To-Do list web application 
+
+    Setup
+    [ ] Create file structure for project
+    [ ] Source CSS, Javascript, and Jquery into index.html
+    [ ] 
+    [ ] 
+
+    Client Side
+    [ ] Create input fields for adding a task
+        [ ] Add input field validation
+    [ ] Create submit button for adding a task
+    [ ] Display all tasks on the DOM
+    [ ] Refresh DOM when a new task is added
+    [ ] Each task had "Complete" & "Delete" buttons
+    [ ] Ajax POST request to add new task when submit button is pressed
+    [ ] Ajax GET request to display all tasks on the DOM 
+    [ ] Ajax PUT request to update "Complete" status of each task 
+    [ ] Ajax DELETE request to delete a task from the SQL database 
+        [ ] Remove task from DOM 
+        [ ] Remove task from Database 
+    [ ] CSS Styling
+        [ ] When a task is complete, its visual representation should change on the front end (background-color changes to green)
+        [ ] Task is checked as "complete" visually
+        [ ] Add styling to the page to make it more professional
+            [ ] Background color 
+            [ ] font family and size
+
+    Server Side 
+    [ ] npm init to install package.json
+    [ ] npm install express
+    [ ] npm install page
+    [ ] add start to package.json 
+    [ ] setup router to handle CRUD requests
+    [ ] Setup database connection configuration
+    [ ] 
+
+    Database
+    [ ] create database in Postico called weekend-to-do-app
+    [ ] create table to store tasks
+    [ ] populate table with test task data
+    [ ] Learn how to use booleans in SQL queries
+
+    Other Project Requirements
+    [ ] create a database.sql file in the repo including all the queries to create the table and populate it with data 
+    [ ] 
+    [ ] 
+
+    Stretch Goals
+    NOTE: Use a GIT branch to work on each stretch goal 
+    [ ] feature-styling-bootstrap
+        [ ] Add bootstrap styling
+            [ ] Buttons - creation and completion buttons = green, deletion buttons = red
+            [ ] Inputs - styled in the bootstrap way
+            [ ] Responsive - make app responsive to different screen sizes
+    [ ] feature-confirm-delete
+        [ ] Verification alert to make sure you want to delete a task (sweet alerts)
+    [ ] feature-ordering-task-query
+        [ ] Research and implement Query Params to reverse the order of the returned todos.
+    [ ] feature-time-completed
+        [ ] Record and display when a task was completed 
