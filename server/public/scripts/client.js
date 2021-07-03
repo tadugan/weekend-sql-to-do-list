@@ -3,9 +3,13 @@ $(document).ready(onReady);
 function onReady() {
     console.log('JQ is sourced and working');
     getTasks();
+    // listener for submit button
+    $('#submitBtn').on('click', postTask);
 }
 
+
 // Primary functions
+// GET all tasks from the database
 function getTasks() {
     console.log('in getTasks');
 
@@ -21,6 +25,27 @@ function getTasks() {
         });
 }
 
+
+// POST a new task to the database
+function postTask() {
+    $.ajax({
+        type: 'POST',
+        url: '/tasks',
+        data: {
+            name: $('#nameInput').val(),
+            description: $('descriptionInput').val()
+        }
+    })
+        .then(response => {
+            console.log('New task added to database');
+            getTasks();
+        })
+        .catch(error => {
+            console.log('Could not add task to database. Error:', error);
+        });
+}
+
+// updates DOM to display all task in database
 function renderTasks(tasksArray) {
     let el = $('#tasksTable');
     el.empty();
