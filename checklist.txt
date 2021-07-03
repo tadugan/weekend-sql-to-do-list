@@ -7,6 +7,7 @@ TODO: To-Do list web application
     Client Side
     [ ] Create input fields for adding a task
         [ ] Add input field validation
+        [ ] Set max character length RESEARCH THIS
     [ ] Create submit button for adding a task
     [ ] Display all tasks on the DOM
     [ ] Refresh DOM when a new task is added
@@ -31,12 +32,11 @@ TODO: To-Do list web application
     [x] setup server.js
     [x] add start to package.json  
     [x] setup pool.js 
-    [ ] setup tasks.router.js 
-        [ ] GET requests
-        [ ] POST requests 
+    [x] setup tasks.router.js 
+        [x] GET requests
+        [x] POST requests 
         [ ] PUT requests 
         [ ] DELETE requests 
-    [ ] Setup database connection configuration
 
     Database
     [x] create database in Postico called weekend-to-do-app

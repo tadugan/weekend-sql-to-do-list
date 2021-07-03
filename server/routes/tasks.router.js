@@ -19,9 +19,23 @@ tasksRouter.get('/', (req, res) => {
         });
 });
 
-
 // POST
-
+// Query to add a new task
+tasksRouter.post('/', (req, res) => {
+    const newTask = req.body;
+    const queryText = `
+    INSERT INTO to_do_list ("name", "description")
+    VALUES ($1, $2);
+    `;
+    pool.query(queryText, [newTask.name, newTask.description])
+        .then(result => {
+            res.sendStatus(201);
+        })
+        .catch(error => {
+            console.log(`Error adding new task ${queryText}. Error: ${error}`);
+            res.sendStatus(500);
+        });
+});
 
 // PUT
 
