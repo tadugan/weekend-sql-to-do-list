@@ -126,7 +126,7 @@ function renderTasks(tasksArray) {
         <td class="taskDescription">${tasksArray[i].description}</td>
         <td>${taskStatus(tasksArray[i].complete)}</td>
         <td>${dateCompleted(tasksArray[i].complete, tasksArray[i].date_completed)}</td>
-        <td><button class="deleteBtn">Delete</button></td>
+        <td>${addDoneButton(tasksArray[i].complete)}<button class="deleteBtn btn btn-danger">X</button></td>
     </tr>
     `);
     }
@@ -148,6 +148,14 @@ function addCompleteClass(booleanValue) {
     }
 }
 
+function addDoneButton(booleanValue) {
+    if (!booleanValue) {
+        return '<button class="completeTaskBtn btn btn-success">Done</button>';
+    }
+    else {
+        return '';
+    }
+}
 
 // clear all input fields
 function clearInputs() {
@@ -175,6 +183,6 @@ function taskStatus(booleanValue) {
         return 'Completed';
     }
     else {
-        return 'To-Do <button class="completeTaskBtn">done</button>';
+        return 'To-Do';
     }
 }

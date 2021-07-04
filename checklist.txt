@@ -51,6 +51,10 @@ TODO: To-Do list web application
     Other Project Requirements
     [x] create a database.sql file in the repo including all the queries to create the table and populate it with data  
 
+    Other features to implement
+    [ ] Have long description text carry to a new line rather than stretch the table
+    [ ] Figure out how to round all corners of the table.
+
     Stretch Goals
     NOTE: Use a GIT branch to work on each stretch goal 
     [ ] feature-styling-bootstrap
