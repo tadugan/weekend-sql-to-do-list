@@ -23,6 +23,7 @@ function getTasks() {
     })
         .then(response => {
             renderTasks(response);
+            clearInputs();
         })
         .catch(error => {
             console.log('error in getting tasks. Error:', error);
@@ -32,6 +33,12 @@ function getTasks() {
 
 // POST a new task to the database
 function postTask() {
+    // validate input fields
+    if ($('#nameInput').val() === '' || $('#descriptionInput').val() === '') {
+        alert('Please fill all input fields.')
+        return;
+    }
+
     $.ajax({
         type: 'POST',
         url: '/tasks',
@@ -114,6 +121,12 @@ function renderTasks(tasksArray) {
 
 // Additonal functions (listed alphabetically)
 
+function clearInputs() {
+    $('#nameInput').val('');
+    $('#descriptionInput').val('');
+}
+
+
 // adds the 'complete' class to completed tasks
 function addCompleteClass(booleanValue) {
     if (booleanValue) {
@@ -123,6 +136,7 @@ function addCompleteClass(booleanValue) {
         return 'class="incomplete"';
     }
 }
+
 
 // function returns 'completed' (if true) or incomplete (if false) 
 // depending on database state of 'complete'

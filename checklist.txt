@@ -6,8 +6,8 @@ TODO: To-Do list web application
 
     Client Side
     [x] Create input fields for adding a task
-        [ ] Add input field validation
-        [ ] Set max character length (RESEARCH THIS)
+        [x] Add input field validation
+        [x] Set max character length (RESEARCH THIS)
     [x] Create submit button for adding a task
     [x] Create a Table to display tasks 
     [x] Refresh DOM when a new task is added
@@ -19,7 +19,7 @@ TODO: To-Do list web application
     [x] Ajax DELETE request to delete a task from the SQL database 
         [x] Remove task from DOM 
         [x] Remove task from Database 
-    [ ] CSS Styling
+    [x] CSS Styling
         [x] When a task is complete, its visual representation should change on the front end (background-color changes to green)
         [x] Task is checked as "complete" visually
         [x] Add styling to the page to make it more professional
