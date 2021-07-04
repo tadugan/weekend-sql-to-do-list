@@ -7,7 +7,7 @@ const tasksRouter = express.Router();
 // Query to get contents of entire to_do_list table
 tasksRouter.get('/', (req, res) => {
     // variable to hold query text
-    const queryText = 'SELECT * FROM to_do_list;';
+    const queryText = 'SELECT * FROM to_do_list ORDER BY "complete" ASC;';
     // SQL query to DB
     pool.query(queryText)
         .then(result => {
