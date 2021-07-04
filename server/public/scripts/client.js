@@ -65,17 +65,31 @@ function deleteTaskHandler() {
 
 // DELETE a task from DOM and database
 function deleteTask(taskId) {
-    $.ajax({
-        type: 'DELETE',
-        url: `/tasks/${taskId}`
-    })
-        .then(response => {
-            console.log('task deleted successfully');
-            getTasks();
-        })
-        .catch(error => {
-            alert('There was an issue deleting this task. Please try again.')
-        });
+    swal({
+        title: "Are you sure you want to delete this task?",
+        text: "This action cannot be undone.",
+        icon: "warning",
+        buttons: true,
+        dangerMode: true,
+      })
+      .then((willDelete) => {
+        if (willDelete) {
+            $.ajax({
+                type: 'DELETE',
+                url: `/tasks/${taskId}`
+            })
+                .then(response => {
+                    console.log('task deleted successfully');
+                    getTasks();
+                })
+                .catch(error => {
+                    alert('There was an issue deleting this task. Please try again.')
+                });
+          swal("Task Deleted!", {
+            icon: "success",
+          });
+        }
+      });
 }
 
 
