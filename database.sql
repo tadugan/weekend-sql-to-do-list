@@ -4,8 +4,9 @@
 CREATE TABLE to_do_list (
 	"id" serial PRIMARY KEY,
 	"name" varchar(80),
-	"description" varchar(255),
-	"complete" boolean default 'false'
+	"description" varchar(250),
+	"complete" boolean default 'false',
+	"date_completed" TIMESTAMP default null
 );
 
 -- display entire table

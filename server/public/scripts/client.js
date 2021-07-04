@@ -6,9 +6,9 @@ function onReady() {
     // listener for submit button
     $('#submitBtn').on('click', postTask);
     // listener for delete buttons
-    $('#tasksTableBody').on('click', '#deleteBtn', deleteTaskHandler);
+    $('#tasksTableBody').on('click', '.deleteBtn', deleteTaskHandler);
     // listener for done button to mark task as complete
-    $('#tasksTableBody').on('click', '#completeTaskBtn', completeTaskHandler);
+    $('#tasksTableBody').on('click', '.completeTaskBtn', completeTaskHandler);
 }
 
 
@@ -125,7 +125,8 @@ function renderTasks(tasksArray) {
         <td class="taskName">${tasksArray[i].name}</td>
         <td class="taskDescription">${tasksArray[i].description}</td>
         <td>${taskStatus(tasksArray[i].complete)}</td>
-        <td><button id="deleteBtn">Delete</button></td>
+        <td>${dateCompleted(tasksArray[i].complete, tasksArray[i].date_completed)}</td>
+        <td><button class="deleteBtn">Delete</button></td>
     </tr>
     `);
     }
@@ -135,10 +136,6 @@ function renderTasks(tasksArray) {
 
 // Additonal functions (listed alphabetically)
 
-function clearInputs() {
-    $('#nameInput').val('');
-    $('#descriptionInput').val('');
-}
 
 
 // adds the 'complete' class to completed tasks
@@ -152,6 +149,24 @@ function addCompleteClass(booleanValue) {
 }
 
 
+// clear all input fields
+function clearInputs() {
+    $('#nameInput').val('');
+    $('#descriptionInput').val('');
+}
+
+// populates date for completed tasks
+function dateCompleted(booleanValue, dateOfCompletion) {
+    let date = new Date(dateOfCompletion);
+    if (booleanValue) {
+        return `${moment(date).format("MMM Do YYYY")}`;
+    }
+    else {
+        return '';
+    }
+}
+
+
 // function returns 'completed' (if true) or incomplete (if false) 
 // depending on database state of 'complete'
 function taskStatus(booleanValue) {
@@ -160,6 +175,6 @@ function taskStatus(booleanValue) {
         return 'Completed';
     }
     else {
-        return 'To-Do <button id="completeTaskBtn">done</button>';
+        return 'To-Do <button class="completeTaskBtn">done</button>';
     }
 }
