@@ -7,6 +7,8 @@ function onReady() {
     $('#submitBtn').on('click', postTask);
     // listener for delete buttons
     $('#tasksTableBody').on('click', '#deleteBtn', deleteTaskHandler);
+    // listener for done button to mark task as complete
+    $('#tasksTableBody').on('click', '#completeTaskBtn', completeTaskHandler);
 }
 
 
@@ -35,7 +37,7 @@ function postTask() {
         url: '/tasks',
         data: {
             name: $('#nameInput').val(),
-            description: $('descriptionInput').val()
+            description: $('#descriptionInput').val()
         }
     })
         .then(response => {
@@ -47,10 +49,12 @@ function postTask() {
         });
 }
 
+
 // DELETE task handler
 function deleteTaskHandler() {
-    deleteTask($(this).data('id'));
+    deleteTask($(this).parent().parent().data('id'));
 }
+
 
 // DELETE a task from DOM and database
 function deleteTask(taskId) {
@@ -68,6 +72,27 @@ function deleteTask(taskId) {
 }
 
 
+// PUT request handler
+function completeTaskHandler() {
+    completeTask($(this).parent().parent().data('id'));
+}
+
+// PUT request to change state of completed from 'To-Do' (false) to 'Completed' (true)
+function completeTask(taskId) {
+    $.ajax({
+        type: 'PUT',
+        url: `/tasks/${taskId}`
+    })
+        .then(response => {
+            console.log('task updated successfully');
+            getTasks();
+        })
+        .catch(error => {
+            alert('There was an issue updating this task. Please try again.')
+        });
+}
+
+
 // updates DOM to display all task in database
 function renderTasks(tasksArray) {
     let el = $('#tasksTableBody');
@@ -75,11 +100,11 @@ function renderTasks(tasksArray) {
     // append table headers
     for (i=0; i<tasksArray.length; i++) {
     el.append(`
-    <tr>
+    <tr data-id="${tasksArray[i].id}">
         <td>${tasksArray[i].name}</td>
         <td>${tasksArray[i].description}</td>
-        <td>${tasksArray[i].complete}</td>
-        <td><button id="deleteBtn" data-id="${tasksArray[i].id}">Delete</button></td>
+        <td>${taskStatus(tasksArray[i].complete)}</td>
+        <td><button id="deleteBtn">Delete</button></td>
     </tr>
     `);
     }
@@ -89,3 +114,14 @@ function renderTasks(tasksArray) {
 
 // Additonal functions (listed alphabetically)
 
+// function returns 'completed' (if true) or incomplete (if false) 
+// depending on database state of 'complete'
+function taskStatus(booleanValue) {
+    // if task is complete (TRUE)
+    if (booleanValue === true) {
+        return 'Completed';
+    }
+    else {
+        return 'To-Do <button id="completeTaskBtn">done</button>';
+    }
+}

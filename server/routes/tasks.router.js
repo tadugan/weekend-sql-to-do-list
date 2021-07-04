@@ -29,6 +29,7 @@ tasksRouter.post('/', (req, res) => {
     `;
     pool.query(queryText, [newTask.name, newTask.description])
         .then(result => {
+            console.log(`${newTask.name} and ${newTask.description}`)
             res.sendStatus(201);
         })
         .catch(error => {

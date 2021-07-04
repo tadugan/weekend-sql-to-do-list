@@ -17,3 +17,7 @@ th, td {
     min-width: 100px;
     background-color: white;
 }
+
+#completeTaskBtn {
+    background-color: green;
+}
