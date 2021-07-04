@@ -100,9 +100,9 @@ function renderTasks(tasksArray) {
     // append table headers
     for (i=0; i<tasksArray.length; i++) {
     el.append(`
-    <tr data-id="${tasksArray[i].id}">
-        <td>${tasksArray[i].name}</td>
-        <td>${tasksArray[i].description}</td>
+    <tr data-id="${tasksArray[i].id}" ${addCompleteClass(tasksArray[i].complete)}>
+        <td class="taskName">${tasksArray[i].name}</td>
+        <td class="taskDescription">${tasksArray[i].description}</td>
         <td>${taskStatus(tasksArray[i].complete)}</td>
         <td><button id="deleteBtn">Delete</button></td>
     </tr>
@@ -114,11 +114,21 @@ function renderTasks(tasksArray) {
 
 // Additonal functions (listed alphabetically)
 
+// adds the 'complete' class to completed tasks
+function addCompleteClass(booleanValue) {
+    if (booleanValue) {
+        return 'class="complete"';
+    }
+    else {
+        return 'class="incomplete"';
+    }
+}
+
 // function returns 'completed' (if true) or incomplete (if false) 
 // depending on database state of 'complete'
 function taskStatus(booleanValue) {
     // if task is complete (TRUE)
-    if (booleanValue === true) {
+    if (booleanValue) {
         return 'Completed';
     }
     else {

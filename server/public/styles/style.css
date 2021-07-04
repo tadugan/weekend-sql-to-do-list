@@ -2,6 +2,8 @@ body {
     margin: 0px;
     background-color: blanchedalmond;
     text-align: center;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: ;
 }
 
 table, th, td {
@@ -11,13 +13,35 @@ table, th, td {
 table {
     margin: auto;
     border-collapse: collapse;
+    background-color: white;
 }
 
 th, td {
     min-width: 100px;
-    background-color: white;
+    padding: 10px;
+}
+
+.complete {
+    background-color: rgb(133, 221, 1);
+}
+
+.incomplete {
+    background-color: lightsalmon;
+}
+
+.taskName {
+    font-size: 20px;
+}
+
+.taskDescription {
+    font-size: 16px;
+}
+
+#inputFields {
+    margin: 20px;
 }
 
 #completeTaskBtn {
     background-color: green;
 }
+

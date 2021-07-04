@@ -11,20 +11,20 @@ TODO: To-Do list web application
     [x] Create submit button for adding a task
     [x] Create a Table to display tasks 
     [x] Refresh DOM when a new task is added
-    [ ] Each task had "Complete" & "Delete" buttons
+    [x] Each task had "Complete" & "Delete" buttons
     [x] Ajax POST request to add new task when submit button is pressed
     [x] Ajax GET request to display all tasks on the DOM 
         [x] Display tasks on page load
-    [ ] Ajax PUT request to update "Complete" status of each task 
+    [x] Ajax PUT request to update "Complete" status of each task 
     [x] Ajax DELETE request to delete a task from the SQL database 
         [x] Remove task from DOM 
         [x] Remove task from Database 
     [ ] CSS Styling
-        [ ] When a task is complete, its visual representation should change on the front end (background-color changes to green)
-        [ ] Task is checked as "complete" visually
-        [ ] Add styling to the page to make it more professional
-            [ ] Background color 
-            [ ] font family and size
+        [x] When a task is complete, its visual representation should change on the front end (background-color changes to green)
+        [x] Task is checked as "complete" visually
+        [x] Add styling to the page to make it more professional
+            [x] Background color 
+            [x] font family and size
 
     Server Side 
     [x] npm init to install package.json
@@ -43,13 +43,13 @@ TODO: To-Do list web application
     [x] create database in Postico called weekend-to-do-app
     [x] create table to store tasks
     [x] populate table with test task data
-    [ ] Learn how to use booleans in SQL queries
+    [x] Learn how to use booleans in SQL queries
 
         Database model
             ID | task name | task description | completed?
 
     Other Project Requirements
-    [ ] create a database.sql file in the repo including all the queries to create the table and populate it with data  
+    [x] create a database.sql file in the repo including all the queries to create the table and populate it with data  
 
     Stretch Goals
     NOTE: Use a GIT branch to work on each stretch goal 
