@@ -58,9 +58,12 @@ TODO: To-Do list web application
             [ ] Buttons - creation and completion buttons = green, deletion buttons = red
             [ ] Inputs - styled in the bootstrap way
             [ ] Responsive - make app responsive to different screen sizes
-    [ ] feature-confirm-delete
-        [ ] Verification alert to make sure you want to delete a task (sweet alerts)
+    [x] feature-confirm-delete
+        [x] Verification alert to make sure you want to delete a task (sweet alerts)
     [ ] feature-ordering-task-query
         [ ] Research and implement Query Params to reverse the order of the returned todos.
-    [ ] feature-time-completed
-        [ ] Record and display when a task was completed 
+    [x] feature-time-completed
+        [x] Record and display when a task was completed 
+            [x] update SQL table creation 
+            [x] update POST request in router 
+            [x] update client.js and index.html to append new column and row to DOM 

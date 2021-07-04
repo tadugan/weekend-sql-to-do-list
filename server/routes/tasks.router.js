@@ -44,7 +44,8 @@ tasksRouter.put('/:id', (req, res) => {
     const taskId = req.params.id;
     const queryText = `
     UPDATE to_do_list 
-    SET "complete"='TRUE' 
+    SET "complete"='TRUE',
+    "date_completed"=CURRENT_TIMESTAMP
     WHERE id=$1;
     `;
 
