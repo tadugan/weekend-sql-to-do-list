@@ -5,6 +5,8 @@ function onReady() {
     getTasks();
     // listener for submit button
     $('#submitBtn').on('click', postTask);
+    // listener for delete buttons
+    $('#tasksTableBody').on('click', '#deleteBtn', deleteTaskHandler);
 }
 
 
@@ -45,19 +47,32 @@ function postTask() {
         });
 }
 
+// DELETE task handler
+function deleteTaskHandler() {
+    deleteTask($(this).data('id'));
+}
+
+// DELETE a task from DOM and database
+function deleteTask(taskId) {
+    $.ajax({
+        type: 'DELETE',
+        url: `/tasks/${taskId}`
+    })
+        .then(response => {
+            console.log('task deleted successfully');
+            getTasks();
+        })
+        .catch(error => {
+            alert('There was an issue deleting this task. Please try again.')
+        });
+}
+
+
 // updates DOM to display all task in database
 function renderTasks(tasksArray) {
-    let el = $('#tasksTable');
+    let el = $('#tasksTableBody');
     el.empty();
     // append table headers
-    el.append(`
-    <tr>
-        <th>Task</th>
-        <th>Description</th>
-        <th>Status</th>
-        <th>Delete</th>
-    </tr>
-    `);
     for (i=0; i<tasksArray.length; i++) {
     el.append(`
     <tr>

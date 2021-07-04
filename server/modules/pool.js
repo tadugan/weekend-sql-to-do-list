@@ -12,7 +12,7 @@ const pool = new Pool(config);
 
 // debugging
 pool.on('connect', (client) => {
-    console.log('PostgeSQL connected');
+    console.log('PostgreSQL connected');
 });
 
 pool.on('error', (err, client) => {

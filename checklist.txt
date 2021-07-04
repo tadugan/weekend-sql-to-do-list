@@ -12,7 +12,7 @@ TODO: To-Do list web application
     [x] Create a Table to display tasks 
     [ ] Refresh DOM when a new task is added
     [ ] Each task had "Complete" & "Delete" buttons
-    [ ] Ajax POST request to add new task when submit button is pressed
+    [x] Ajax POST request to add new task when submit button is pressed
     [x] Ajax GET request to display all tasks on the DOM 
         [x] Display tasks on page load
     [ ] Ajax PUT request to update "Complete" status of each task 
